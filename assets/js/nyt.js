@@ -1,3 +1,11 @@
+const app = {
+  searchProperties: {},
+
+  search: function (searchProp) {
+
+  }
+}
+
 $(document).ready(function(){
 
  var search = $("#searchTerm").val();
@@ -33,5 +41,10 @@ $(document).ready(function(){
 
 // });
 
-$("#search").on("click", () => console.log(event));
+$("#search").on("click", function (event){
+  event.preventDefault();
+  app.searchProperties.searchTerm = $("#searchTerm").val();
+  app.searchProperties.recordCount = $("#recordCount").val();
+  app.search(app.searchProperties);
+});
 });
