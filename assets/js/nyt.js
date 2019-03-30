@@ -32,3 +32,5 @@ fetch(req)
 
 
 });
+
+$("#search").on("click", console.log(event));
