@@ -1,0 +1,13 @@
+.jumbotron {
+  color: white;
+  background-color: rgb(33,50,90);
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+button {
+  background: white;
+  border: none;
+  cursor: pointer;
+}
