@@ -13,15 +13,28 @@ const app = {
     })
   },
 
+  parseTimeStamp: function (timeStamp) {
+    let year = timeStamp.slice(0, 4);
+    console.log(timeStamp);
+    let month = timeStamp.slice(5, 7);
+    let day = timeStamp.slice(8, 10);
+    console.log(month);
+    console.log(day);
+    let parsedDate = `${month}/${day}/${year}`;
+    return parsedDate
+  },
+
   showArticles: function (response) {
     $("#articleDiv").empty();
     let articleCount = this.searchProperties.recordCount;
+    console.log(response.articles[1]);
     for (let i = 0; i < articleCount; i++) {
-      let article = response.articles[i]
+      let article = response.articles[i];
+      let dateTime = this.parseTimeStamp(article.publishedAt);
       let display =   
         `<div>
           <a href="${article.url}" target="_blank"><h2>${article.title}</h2></a>
-          <p><em>${article.source.name}</em</p>
+          <p><em>${article.source.name}</em><span class="ml-3">${dateTime}</span></p>
           <p>${article.description}</p>
         </div>`
       $("#articleDiv").prepend(display);
