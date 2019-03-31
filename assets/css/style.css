@@ -11,3 +11,10 @@ button {
   border: none;
   cursor: pointer;
 }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 2rem;
+}
